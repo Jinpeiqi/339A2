@@ -1,14 +1,22 @@
 <html>
+    <head>
+        <title>Setting up database</title>
+    </head>
+    <body>
+        <h3>Setting up...</h3>
 <?php
-/**
- * Created by PhpStorm.
- * User: JINPEIQI
- * Date: 2015/9/28
- * Time: 21:02
- */
-?>
-<head>
-    <title>Setting up database</title>
-</head>
+    require_once 'function.php';
+    createTable('member',
+                'username VARCHAR(16),
+               password VARCHAR(16),
+               score  INTEGER(16),
+               PRIMARY KEY (username)');
+    createTable('profiles','
+               username VARCHAR(16),
+               text VARCHAR(255)');
 
+
+?>
+<br>...done.
+</body>
 </html>
