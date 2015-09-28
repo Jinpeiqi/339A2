@@ -29,9 +29,10 @@
             }
             if(ErrorText!=""){
                 alert (ErrorText );
+                return false;
             }
             else{
-                form.submit()
+                return true;
             }
         }
     </script>
@@ -96,7 +97,7 @@
 
 
 
-    <input type="button" name="SubmitButton" value="Submit" onClick="ValidateForm(this.form)">
+    <input type="submit" name="SubmitButton" value="Submit" onClick="return ValidateForm(this.form)">
     <input type="reset" value="Reset">
 </form>
 </body>
