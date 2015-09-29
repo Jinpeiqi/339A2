@@ -14,8 +14,6 @@
     createTable('profiles','
                username VARCHAR(16),
                text VARCHAR(255)');
-
-
 ?>
 <br>...done.
 </body>
