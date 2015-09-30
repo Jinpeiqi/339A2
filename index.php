@@ -25,6 +25,7 @@
     <div id="button"> <a href="index.php"><input type="button" value="Home"></a>
      <a href="login.php"><input type="button" value="Log in"></a>
      <a href="signup.php"><input type="button" value="Sign up"></a></div>
-    <p id="Home_info">=>You must be logged in to view this page.</p>
+    <p id="Home_info">=>You must be logged in to view this page.</p><br>
+    <p id="Info">Where come to QuizTime, please sign up and/or log in to join in.</p>
     </body>
 </html>
