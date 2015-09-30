@@ -1,14 +1,13 @@
-<?php
-$username = $_POST['username'];
-$password = $_POST['password'];
+<html>
+    <head>
+        <title>Log in</title>
+    </head>
+    <body>
+        <form action='Checklogin.php' method='POST'>
+            Username:<input type="text" name="username"><br>
+            Password:<input type="password" name="password"><br>
+            <input type="submit" name="login" value="Log in">
+        </form>
+    </body>
+</html>
 
-if ($username&&$password){
-    require_once 'function.php';
-     $result=queryMysql("SELECT * FROM member WHERE username='$username' and password='$password'");
-        if($result->num_rows==0){
-            echo 'Username/Password invalid';
-        }
-    }else{
-    die("Please enter and username and a password");
-}
-?>
