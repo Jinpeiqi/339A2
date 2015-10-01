@@ -71,6 +71,8 @@
      <a href="index.php" class="button">Home</a>
      <a href="login.php"class="button">Log in</a>
      <a href="signup.php"class="button">Sign up</a>
+     <a href="profile.php"class="button">Profile</a>
+     <a href="logout.php"class="button">Log out</a>
     <p id="Home_info">=>You must be logged in to view this page.</p><br>
     <p id="Info">Where come to QuizTime, please sign up and/or log in to join in.</p>
     </body>
