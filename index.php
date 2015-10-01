@@ -6,6 +6,7 @@ $userstr='Guest';
 
 if(isset($_SESSION['username'])){
     $username=$_SESSION['username'];
+    $userstr=$username;
     $login=True;
 }else{
     $login=False;
@@ -20,7 +21,7 @@ echo "<title>Welcome $userstr</title>
 
 if($login){
     echo " <a href='index.php' class='button''>Home</a>
-            <a href='login.php'class='button'>Member</a>
+            <a href='member.php'class='button'>Member</a>
             <a href='quiz.html'class='button'>Quiz</a>
             <a href='Unsubscribe.php'class='button'>Unsubscribe</a>
             <a href='profile.php'class='button'>Profile</a>

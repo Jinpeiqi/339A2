@@ -1,4 +1,7 @@
 <?php
+    session_start();
+    $username=$_SESSION['username'];
+    require_once 'function.php';
     $total=0;
     if($_POST["Q1"]==3){
         $total++;
@@ -48,5 +51,6 @@
         echo  "Question 8 wrong";
         echo "</br>";
     }
-    echo "Your total score is ",$total;
+    echo "Your total score is "."$total"."</br>";
+    queryMysql("UPDATE db339.member SET score = $total WHERE member.username = $username");
 ?>

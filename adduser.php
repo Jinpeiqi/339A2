@@ -9,5 +9,8 @@
     }else{
         queryMysql("INSERT INTO member VALUES('$username', '$password','0')");
         die("<h4>Account created</h4>Please Log in.<br><br>");
+        echo "<SCRIPT LANGUAGE='JavaScript''>";
+        echo "location.href='index.php'";
+        echo "</SCRIPT>";
     }
 ?>
