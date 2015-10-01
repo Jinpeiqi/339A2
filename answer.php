@@ -53,4 +53,6 @@
     }
     echo "Your total score is "."$total"."</br>";
     queryMysql("UPDATE member SET score = '$total' WHERE username = '$username'");
+    echo "<link rel='stylesheet' type='text/css' href='main.css'>";
+    echo "<a href='index.php' class='button''>Home</a>";
 ?>
