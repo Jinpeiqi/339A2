@@ -1,14 +1,40 @@
-<?php
-$username = $_POST['username'];
-$password = $_POST['password'];
+<html>
+    <head>
+        <title>Log in</title>
+        <style>
+            #title{
+                color: #d068ff;
+                background-color: #ffb489;
+                text-align: center;
+            }
+            #P_quiz{
+                text-align: center;
+            }
+            #Home_info{
+                width: 450px;
+                height: 25px;
+                border: 3px solid #8AC007;
+                background: #66ed86;
+                font-size: 20px;
+                color: #4a64ed;
+            }
+        </style>
+    </head>
+    <body>
 
-if ($username&&$password){
-    require_once 'function.php';
-     $result=queryMysql("SELECT * FROM member WHERE username='$username' and password='$password'");
-        if($result->num_rows==0){
-            echo 'Username/Password invalid';
-        }
-    }else{
-    die("Please enter and username and a password");
-}
-?>
+        <div id="P_quiz"><img  src="quiz.jpg" alt="quiz" "></div>
+        <h1 id="title">QuizTime(Guest)</h1>
+        <div id="button"> <a href="index.php"><input type="button" value="Home"></a>
+            <a href="login.php"><input type="button" value="Log in"></a>
+            <a href="signup.php"><input type="button" value="Sign up"></a></div>
+        <p id="Home_info">=>You must be logged in to view this page.</p><br>
+        <fieldset>
+        <form action='Checklogin.php' method='POST'>
+            Username:<input type="text" name="username"><br>
+            Password:<input type="password" name="password"><br>
+            <input type="submit" name="login" value="Log in">
+        </form>
+        </fieldset>
+    </body>
+</html>
+
