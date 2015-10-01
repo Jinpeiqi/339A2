@@ -12,6 +12,9 @@ if ($username&&$password){
         echo 'Username/Password invalid';
     }else{
         $_SESSION['username']=$username;
+        echo "<SCRIPT LANGUAGE='JavaScript''>";
+        echo "location.href='index.php'";
+        echo "</SCRIPT>";
     }
 }else{
     die("Please enter and username and a password");

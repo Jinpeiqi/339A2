@@ -1,42 +1,7 @@
 <html>
     <head>
         <title>Setting up database</title>
-        <style type="text/css">
-            #invalid_1{
-                color:red;
-                position: absolute;
-                top: 0px;
-                left:270px;
-            }
-            #invalid_2{
-                color:red;
-                position: absolute;
-                top: 28px;
-                left:270px;
-            }
-            #invalid_3{
-                color:red;
-                position: absolute;
-                top: 56px;
-                left:270px;
-            }
-             #title{
-                 color: #d068ff;
-                 background-color: #ffb489;
-                 text-align: center;
-             }
-            #P_quiz{
-                text-align: center;
-            }
-            #Home_info{
-                width: 450px;
-                height: 25px;
-                border: 3px solid #8AC007;
-                background: #66ed86;
-                font-size: 20px;
-                color: #4a64ed;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="main.css">
     </head>
     <script LANGUAGE="JavaScript">
         function ValidateForm(form){
@@ -63,13 +28,12 @@
         }
     </script>
     <body>
-    <div id="P_quiz"><img  src="quiz.jpg" alt="quiz" "></div>
-    <h1 id="title">QuizTime(Guest)</h1>
-    <div id="button"> <a href="index.php"><input type="button" value="Home"></a>
-        <a href="login.php"><input type="button" value="Log in"></a>
-        <a href="signup.php"><input type="button" value="Sign up"></a>
-    </div>
-    <p id="Home_info">=>You must be logged in to view this page.</p><br>
+        <div class="P_quiz"><img  src='quiz.jpg' alt="quiz" ></div>
+        <h1 class="title">QuizTime(Guest)</h1>
+        <a href="index.php" class="button">Home</a>
+        <a href="login.php"class="button">Log in</a>
+        <a href="signup.php"class="button">Sign up</a>
+        <p class="Home_info">=>You must be logged in to view this page.</p><br>
         <fieldset>
            <!-- <p id="invalid_1">Please enter a username</p>
             <p id="invalid_2">Please enter a password</p>

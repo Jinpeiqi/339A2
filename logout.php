@@ -7,4 +7,7 @@
  */
 session_start();
 session_destroy();
+echo "<SCRIPT LANGUAGE='JavaScript''>";
+echo "location.href='index.php'";
+echo "</SCRIPT>";
 ?>
