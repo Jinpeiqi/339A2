@@ -7,7 +7,7 @@
  */
 session_start();
 require_once 'function.php';
-
+echo "<!DOCTYPE html>\n<html><head>";
 $userstr='(Guest)';
 
 if($_SESSION['username']){
@@ -17,5 +17,13 @@ if($_SESSION['username']){
     $login=False;
 }
 
-echo "<title>Welcome $userstr</title>";
+echo "<title>Welcome $userstr</title>
+       <link rel='stylesheet' type='text/css' href='main.css'>
+       <div class='P_quiz'>
+       <img src='quiz.jpg' alt='quiz'>";
 
+if($login){
+    
+}
+
+?>

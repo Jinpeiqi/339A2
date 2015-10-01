@@ -7,7 +7,7 @@ $dbpass = 'a2399';
 
 $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 if ($connection->connect_error) die($connection->connect_error);
-echo  "We are connected to the database $dbname!<br>";
+/*echo  "We are connected to the database $dbname!<br>";*/
 
 function createTable($name,$query){
     queryMysql("CREATE TABLE IF NOT EXISTS $name($query)");
