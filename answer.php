@@ -52,5 +52,5 @@
         echo "</br>";
     }
     echo "Your total score is "."$total"."</br>";
-    queryMysql("UPDATE db339.member SET score = $total WHERE member.username = $username");
+    queryMysql("UPDATE member SET score = $total WHERE member.username = $username");
 ?>
