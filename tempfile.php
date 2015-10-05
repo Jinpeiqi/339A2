@@ -15,17 +15,7 @@ if(isset($_SESSION['username'])){
 echo "<title>Welcome $userstr</title>
        <link rel='stylesheet' type='text/css' href='main.css'>
        <div class='P_quiz'>
-       <canvas id='mycanvas' width='500' height='250'></canvas></div>
-        <script>
-            canvas = document.getElementById('mycanvas')
-            context = canvas.getContext('2d')
-            myimage = new Image()
-            myimage.src = 'quiz.jpg'
-            myimage.onload = function()
-            {
-                context.drawImage(myimage,0,0)
-            }
-        </script>
+       <img src='quiz.jpg' alt='quiz'></div>
         <h1 class='title''>QuizTime($userstr)</h1>";
 
 
