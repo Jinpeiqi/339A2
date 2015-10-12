@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+</head>
+<body>
+<form method="post" action="answer.php"  name="quiz">
+
+    <b>Question 1:<tag id="Q1"></tag></b><br/>
+    <label><input type="radio" name="Q1" value="1"><tag id="1"></tag><br/></label>
+    <label><input type="radio" name="Q1" value="2"><tag id="2"></tag><br/></label>
+    <label><input type="radio" name="Q1" value="3"><tag id="3"></tag><br/></label>
+    <label><input type="radio" name="Q1" value="4"><tag id="4"></tag><br/></label>
+    <br/><br/>
+
+    <b>Question 2:<tag id="Q2"></tag></b><br/>
+    <label><input type="radio" name="Q2" value="1"><tag id="5"></tag><br/></label>
+    <label><input type="radio" name="Q2" value="2"><tag id="6"></tag><br/></label>
+    <label><input type="radio" name="Q2" value="3"><tag id="7"></tag><br/></label>
+    <label><input type="radio" name="Q2" value="4"><tag id="8"></tag><br/></label>
+    <br/><br/>
+
+    <b>Question 3:<tag id="Q3"></tag></b><br/>
+    <label><input type="radio" name="Q3" value="1"><tag id="9"></tag><br/></label>
+    <label><input type="radio" name="Q3" value="2"><tag id="10"></tag><br/></label>
+    <label><input type="radio" name="Q3" value="3"><tag id="11"></tag><br/></label>
+    <label><input type="radio" name="Q3" value="4"><tag id="12"></tag><br/></label>
+    <br/><br/>
+
+    <b>Question 4:<tag id="Q4"></tag></b><br/>
+    <label><input type="radio" name="Q4" value="1"><tag id="13"></tag><br/></label>
+    <label><input type="radio" name="Q4" value="2"><tag id="14"></tag><br/></label>
+    <label><input type="radio" name="Q4" value="3"><tag id="15"></tag><br/></label>
+    <label><input type="radio" name="Q4" value="4"><tag id="16"></tag><br/></label>
+    <br/><br/>
+
+
+    <b>Question 5:<tag id="Q5"></tag></b><br/>
+    <label><input type="radio" name="Q5" value="1"><tag id="17"></tag><br/></label>
+    <label><input type="radio" name="Q5" value="2"><tag id="18"></tag><br/></label>
+    <label><input type="radio" name="Q5" value="3"><tag id="19"></tag><br/></label>
+    <label><input type="radio" name="Q5" value="4"><tag id="20"></tag><br/></label>
+    <br/><br/>
+
+    <input type="submit" name="SubmitButton" value="Submit" onClick="return ValidateForm(this.form)">
+    <input type="reset" value="Reset">
+</form>
+<script>
+    var question = [
+            "What does PHP stand for?",
+            "Which of the following is the way to create comments in PHP?",
+            "A value that has no defined value is expressed in PHP with the following keyword:",
+            "Which of the following is used to declare a constant",
+            "Which of the following is NOT a valid PHP comparison operator?",
+            "How do I create PHP arrays in a HTML form?",
+            "Which of the following rules below is false for exceptions?"
+        ];
+    var answer = [
+            "Preprocessed Hypertext Page","Hypertext Markup Language","PHP: Hypertext Preprocessor","Hypertext Transfer Protocol",
+            "// commented code to end of line", "/* commented code here */","# commented code to end of line","all of the above",
+            "undef","null","None","There is no such concept in PHP",
+            "const","constant","define","def",
+            "!=",">=","<=>","<>",
+            "< input name= MyArray[]/>","< input ='MyArray[]' />","< input name='MyArray[]' />","< input MyArray[] />",
+            "Each try block or 'throw' must have at least one corresponding catch block","Multiple catch blocks can be used to catch different classes of exceptions","Both a and b above","Exceptions cannot be thrown (or re-thrown) in a catch block within a try block"
+            ];
+
+    var qs="Q";
+    var as="";
+    function takerandomnumber(){
+        var arr = [];
+        while(arr.length < 5){
+            var randomnumber=Math.ceil(Math.random()*7)
+            var found=false;
+            for(var i=0;i<arr.length;i++){
+                if(arr[i]==randomnumber){found=true;break}
+            }
+            if(!found)arr[arr.length]=randomnumber;
+        }
+        return arr;
+    }
+
+    var qnum=takerandomnumber();
+    document.write(qnum+"<br>");
+    document.write(question[6]);
+        for(i=0;i<5;i++){
+            document.getElementById(qs+(i+1)).innerHTML=question[qnum[i]-1];
+            document.getElementById(as+(1+i)).innerHTML=answer[0];
+            document.getElementById(as+(1+i)).innerHTML=answer[0];
+            document.getElementById(as+(1+i)).innerHTML=answer[0];
+            document.getElementById(as+(1+i)).innerHTML=answer[0];
+        }
+</script>
+</body>
+</html>
