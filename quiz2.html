@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Quiz</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <body>
 <form method="post" action="answer.php"  name="quiz">
@@ -44,8 +45,10 @@
     <br/><br/>
 
     <input type="submit" name="SubmitButton" value="Submit" onClick="return ValidateForm(this.form)">
+    <input type="hidden" name="hidden1" id="hidden1">
     <input type="reset" value="Reset">
 </form>
+<div id="result"></div>
 <script>
     var question = [
             "What does PHP stand for?",
@@ -82,15 +85,43 @@
     }
 
     var qnum=takerandomnumber();
+    document.getElementById("hidden1").value=qnum;
     document.write(qnum+"<br>");
     document.write(question[6]);
         for(i=0;i<5;i++){
             document.getElementById(qs+(i+1)).innerHTML=question[qnum[i]-1];
-            document.getElementById(as+(1+i)).innerHTML=answer[0];
-            document.getElementById(as+(1+i)).innerHTML=answer[0];
-            document.getElementById(as+(1+i)).innerHTML=answer[0];
-            document.getElementById(as+(1+i)).innerHTML=answer[0];
+            document.getElementById(as+(1+i*4)).innerHTML=answer[qnum[i]*4-4];
+            document.getElementById(as+(2+i*4)).innerHTML=answer[qnum[i]*4-3];
+            document.getElementById(as+(3+i*4)).innerHTML=answer[qnum[i]*4-2];
+            document.getElementById(as+(4+i*4)).innerHTML=answer[qnum[i]*4-1];
         }
+    //var b="123";
+    //$.post("answer.php",{namea:b},function(){});
+    function ValidateForm(form){
+        var ErrorText= "";
+        if (form.Q1[0].checked == false&&form.Q1[1].checked == false&&form.Q1[2].checked == false&&form.Q1[3].checked == false) {
+            ErrorText+="Please answer question 1\n";
+        }
+        if (form.Q2[0].checked == false&&form.Q2[1].checked == false&&form.Q2[2].checked == false&&form.Q2[3].checked == false) {
+            ErrorText+="Please answer question 2\n";
+        }
+        if (form.Q3[0].checked == false&&form.Q3[1].checked == false&&form.Q3[2].checked == false&&form.Q3[3].checked == false) {
+            ErrorText+="Please answer question 3\n";
+        }
+        if (form.Q4[0].checked == false&&form.Q4[1].checked == false&&form.Q4[2].checked == false&&form.Q4[3].checked == false) {
+            ErrorText+="Please answer question 4\n";
+        }
+        if (form.Q5[0].checked == false&&form.Q5[1].checked == false&&form.Q5[2].checked == false&&form.Q5[3].checked == false) {
+            ErrorText+="Please answer question 5\n";
+        }
+        if(ErrorText!=""){
+            alert (ErrorText );
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
 </script>
 </body>
 </html>
