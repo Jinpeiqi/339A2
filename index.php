@@ -37,7 +37,7 @@ if($login){
             <a href='profile.php'class='button'>Profile</a>
             <a href='logout.php'class='button'>Log out</a> ";
 }else{
-    echo " <a href='index.php' class='button''>Home</a>
+    echo " <a href='quiz2.html' class='button''>Home</a>
             <a href='login.php'class='button'>Log in</a>
             <a href='signup.php'class='button'>Sign up</a>
             <p class='Home_info'>=>You must be logged in to view this page.</p><br>

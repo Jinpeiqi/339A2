@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!isset($_SESSION['username'])){
+    echo "You are not allow to this page";
+    exit();
+}
 require_once 'function.php';
 echo "<!DOCTYPE html>\n<html><head>";
     $userstr='Guest';
