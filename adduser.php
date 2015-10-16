@@ -1,4 +1,8 @@
 <?php
+    if(!isset($_POST['username'])){
+        echo "You are not allow to this page";
+        exit();
+    }
     $username = $_POST['username'];
     $password = $_POST['password'];
     require_once 'function.php';

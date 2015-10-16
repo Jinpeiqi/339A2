@@ -6,6 +6,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <body>
+<link rel='stylesheet' type='text/css' href='main.css'>
+<div class="P_quiz"><h1>You need to login in,otherwise you cant submit the answer</h1></div>
 <form method="post"   name="quiz">
 
     <b>Question 1:<tag id="Q1"></tag></b><br/>
@@ -47,6 +49,7 @@
     <input type="submit" name="SubmitButton" value="Submit" onClick="return ValidateForm(this.form)">
     <input type="hidden" name="hidden1" id="hidden1">
     <input type="reset" value="Reset">
+    <a href="index.php"><input type="button" name="home" value="Home"></a>
 </form>
 <div id="result"></div>
 <script>
@@ -86,8 +89,7 @@
 
     var qnum=takerandomnumber();
     document.getElementById("hidden1").value=qnum;
-    document.write(qnum+"<br>");
-    document.write(question[6]);
+    //document.write(qnum+"<br>");
     for(i=0;i<5;i++){
         document.getElementById(qs+(i+1)).innerHTML=question[qnum[i]-1];
         document.getElementById(as+(1+i*4)).innerHTML=answer[qnum[i]*4-4];

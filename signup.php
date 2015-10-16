@@ -1,50 +1,51 @@
 <html>
-    <head>
-        <title>Setting up database</title>
-        <link rel="stylesheet" type="text/css" href="main.css">
-    </head>
-    <script LANGUAGE="JavaScript">
-        function ValidateForm(form){
-            var ErrorText= "";
-            if(form.username.value==""){
-                document.getElementById(invalid_1).innerHTML=
+<head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script type='text/javascript'>
+        function validation(){
+            var name = document.getElementById("name").value;
+            var psw1 = document.getElementById("psw1").value;
+            var psw2 = document.getElementById("psw2").value;
+            var msg= "";
+            if(name==""){
+                msg+="please enter a name \n";
             }
-            if(form.password.value==""){
-                ErrorText+="Please enter a password\n";
+            if(psw1==""){
+                msg+="please enter a password \n";
             }
-            if(form.password2.value==""){
-                ErrorText+="Please enter a password2\n";
+            if(psw2==""){
+                msg+="please enter a password2 \n";
             }
-            if(form.password.value!=form.password2.value){
-                ErrorText+="Password are not equal\n";
+            if(psw1!=psw2){
+                msg+="These passwords don't match \n";
             }
-            if(ErrorText!=""){
-                alert (ErrorText );
-                return false;
+            if(psw1!=""){
+                if(psw1.length<6){
+                    msg+="At least 6 characters";
+                }
             }
-            else{
+            if(msg==""){
                 return true;
+            }else{
+                alert(msg);
+                return false;
             }
         }
     </script>
-    <body>
-        <div class="P_quiz"><img  src='quiz.jpg' alt="quiz" ></div>
-        <h1 class="title">QuizTime(Guest)</h1>
-        <a href="index.php" class="button">Home</a>
-        <a href="login.php"class="button">Log in</a>
-        <a href="signup.php"class="button">Sign up</a>
-        <p class="Home_info">=>You must be logged in to view this page.</p><br>
-        <fieldset>
-           <!-- <p id="invalid_1">Please enter a username</p>
-            <p id="invalid_2">Please enter a password</p>
-            <p id="invalid_3">These passwords don't match. Try again?</p>-->
-        <form action='adduser.php' method='POST'>
-        Username :<input type="text" name="username"><br>
-        Password :<input type="password" name="password"><br>
-        password2:<input type="password" name="password2"><br>
-        <input type="submit" name="Signup" value="Signup" onClick="return ValidateForm(this.form)"><br>
-        </form>
-        </fieldset>
-
-    </body>
+</head>
+<body>
+    <div class="P_quiz"><img  src='quiz.jpg' alt="quiz" ></div>
+    <h1 class="title">QuizTime(Guest)</h1>
+    <a href="index.php" class="button">Home</a>
+    <a href="login.php"class="button">Log in</a>
+    <a href="signup.php"class="button">Sign up</a>
+    <a href='quiz2.html'class='button'>Quiz</a>
+    <p class="Home_info">=>You must be logged in to view this page.</p><br>
+    <form action="adduser.php" method="POST" onSubmit="return validation()">
+        Username : <input type="text" name="username" id="name"><br>
+        Password : <input type="password" name="password" id="psw1"><br>
+        password2: <input type="password" name="password2" id="psw2"><br>
+        <input type="submit" value="submit">
+    </form>
+</body>
 </html>
