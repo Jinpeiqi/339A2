@@ -1,0 +1,106 @@
+<html>
+<head>
+    <script LANGUAGE="JavaScript">
+        /**
+         * @return {boolean}
+         */
+        function ValidateForm(form){
+            var ErrorText= "";
+            if (form.Q1[0].checked == false&&form.Q1[1].checked == false&&form.Q1[2].checked == false&&form.Q1[3].checked == false) {
+                ErrorText+="Please answer question 1\n";
+            }
+            if (form.Q2[0].checked == false&&form.Q2[1].checked == false&&form.Q2[2].checked == false&&form.Q2[3].checked == false) {
+                ErrorText+="Please answer question 2\n";
+            }
+            if (form.Q3[0].checked == false&&form.Q3[1].checked == false&&form.Q3[2].checked == false&&form.Q3[3].checked == false) {
+                ErrorText+="Please answer question 3\n";
+            }
+            if (form.Q4[0].checked == false&&form.Q4[1].checked == false&&form.Q4[2].checked == false&&form.Q4[3].checked == false) {
+                ErrorText+="Please answer question 4\n";
+            }
+            if (form.Q5[0].checked == false&&form.Q5[1].checked == false&&form.Q5[2].checked == false&&form.Q5[3].checked == false) {
+                ErrorText+="Please answer question 5\n";
+            }
+            if (form.Q6[0].checked == false&&form.Q6[1].checked == false&&form.Q6[2].checked == false&&form.Q6[3].checked == false) {
+                ErrorText+="Please answer question 6\n";
+            }
+            if (form.Q7[0].checked == false&&form.Q7[1].checked == false&&form.Q7[2].checked == false&&form.Q7[3].checked == false) {
+                ErrorText+="Please answer question 7\n";
+            }
+            if (form.Q8[0].checked == false&&form.Q8[1].checked == false) {
+                ErrorText+="Please answer question 8\n";
+            }
+            if(ErrorText!=""){
+                alert (ErrorText );
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>PHP QUIZ<br></h1>
+<form method="post" action="answer.php"  name="quiz">
+    <b>Question 1: What does PHP stand for?</b><br/>
+    <label><input type="radio" name="Q1" value="1">Preprocessed Hypertext Page<br/></label>
+    <label><input type="radio" name="Q1" value="2">Hypertext Markup Language<br/></label>
+    <label><input type="radio" name="Q1" value="3">PHP: Hypertext Preprocessor<br/></label>
+    <label><input type="radio" name="Q1" value="4">Hypertext Transfer Protocol<br/></label>
+    <br/><br/>
+
+    <b>Question 2: Which of the following is the way to create comments in PHP?</b><br/>
+    <label><input type="radio" name="Q2" value="1">// commented code to end of line<br/></label>
+    <label><input type="radio" name="Q2" value="2">/* commented code here */<br/></label>
+    <label><input type="radio" name="Q2" value="3"># commented code to end of line<br/></label>
+    <label><input type="radio" name="Q2" value="4">all of the above<br/></label>
+    <br/><br/>
+
+    <b>Question 3: A value that has no defined value is expressed in PHP with the following keyword:</b><br/>
+    <label><input type="radio" name="Q3" value="1">undef<br/></label>
+    <label><input type="radio" name="Q3" value="2">null<br/></label>
+    <label><input type="radio" name="Q3" value="3">None<br/></label>
+    <label><input type="radio" name="Q3" value="4">There is no such concept in PHP<br/></label>
+    <br/><br/>
+
+    <b>Question 4: Which of the following is used to declare a constant</b><br/>
+    <label><input type="radio" name="Q4" value="1">const<br/></label>
+    <label><input type="radio" name="Q4" value="2">constant<br/></label>
+    <label><input type="radio" name="Q4" value="3">define<br/></label>
+    <label><input type="radio" name="Q4" value="4">def<br/></label>
+    <br/><br/>
+
+    <b>Question 5: Which of the following is NOT a valid PHP comparison operator?</b><br/>
+    <label><input type="radio" name="Q5" value="1">!=<br/></label>
+    <label><input type="radio" name="Q5" value="2">>= <br/></label>
+    <label><input type="radio" name="Q5" value="3"><=><br/></label>
+    <label><input type="radio" name="Q5" value="4"><><br/></label>
+    <br/><br/>
+
+    <b>Question 6: How do I create PHP arrays in a HTML form?</b><br/>
+    <label><input type="radio" name="Q6" value="1">< input name= MyArray[]/><br/></label>
+    <label><input type="radio" name="Q6" value="2">< input ="MyArray[]" /> <br/></label>
+    <label><input type="radio" name="Q6" value="3">< input name="MyArray[]" /><br/></label>
+    <label><input type="radio" name="Q6" value="4">< input MyArray[] /><br/></label>
+    <br/><br/>
+
+    <b>Question 7: Which of the following rules below is false for exceptions?</b><br/>
+     <label><input type="radio" name="Q7" value="1">Each try block or "throw" must have at least one corresponding catch block<br/></label>
+     <label><input type="radio" name="Q7" value="2">Multiple catch blocks can be used to catch different classes of exceptions <br/></label>
+     <label><input type="radio" name="Q7" value="3">Both a and b above<br/></label>
+     <label><input type="radio" name="Q7" value="4">Exceptions cannot be thrown (or re-thrown) in a catch block within a try block<br/></label>
+    <br/><br/>
+
+    <b>Question 8: echo does not return any value</b><br/>
+    <label><input type="radio" name="Q8" value="1">False<br/></label>
+    <label><input type="radio" name="Q8" value="2">True <br/></label>
+    <br/><br/>
+
+
+
+    <input type="submit" name="SubmitButton" value="Submit" onClick="return ValidateForm(this.form)">
+    <input type="reset" value="Reset">
+</form>
+</body>
+</html>

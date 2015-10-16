@@ -18,28 +18,28 @@
             $total++;
         }else{
             echo  "Question 2 wrong";
-            echo  "The correct is choice".$correct_answer[$answer[2]-1];
+            echo  "The correct is choice ".$correct_answer[$answer[2]-1];
             echo "</br>";
         }
         if($_POST["Q3"]==$correct_answer[$answer[4]-1]){
             $total++;
         }else{
             echo  "Question 3 wrong";
-            echo  "The correct is choice".$correct_answer[$answer[4]-1];
+            echo  "The correct is choice ".$correct_answer[$answer[4]-1];
             echo "</br>";
         }
         if($_POST["Q4"]==$correct_answer[$answer[6]-1]){
             $total++;
         }else{
             echo  "Question 4 wrong";
-            echo  "The correct is choice".$correct_answer[$answer[6]-1];
+            echo  "The correct is choice ".$correct_answer[$answer[6]-1];
             echo "</br>";
         }
         if($_POST["Q5"]==$correct_answer[$answer[8]-1]){
             $total++;
         }else{
             echo  "Question 5 wrong";
-            echo  "The correct is choice".$correct_answer[$answer[8]-1];
+            echo  "The correct is choice ".$correct_answer[$answer[8]-1];
             echo "</br>";
         }
     //}
@@ -105,7 +105,12 @@
     if($total<3){
         echo "Need to work hard"."</br>";
     }
-    $score=queryMysql("SELECT `score` FROM `member` WHERE username = $username");
+    $result=queryMysql("SELECT `score` FROM `member` WHERE username = '$username'");
+    if($result->num_rows>0){
+        while($row = $result->fetch_assoc()){
+           $score= $row["score"];
+          }
+    }
     if($total>$score){
     queryMysql("UPDATE member SET score = '$total' WHERE username = '$username'");
     }
