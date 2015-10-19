@@ -54,22 +54,48 @@
 <div id="result"></div>
 <script>
     var question = [
-        "What does PHP stand for?",
-        "Which of the following is the way to create comments in PHP?",
-        "A value that has no defined value is expressed in PHP with the following keyword:",
-        "Which of the following is used to declare a constant",
-        "Which of the following is NOT a valid PHP comparison operator?",
-        "How do I create PHP arrays in a HTML form?",
-        "Which of the following rules below is false for exceptions?"
+         "What does PHP stand for?",
+			"Which of the following is the way to create comments in PHP?",
+         "A value that has no defined value is expressed in PHP with the following keyword:",
+         "Which of the following is used to declare a constant",
+         "Which of the following is NOT a valid PHP comparison operator?",
+         "How do I create PHP arrays in a HTML form?",
+         "Which of the following rules below is false for exceptions?",
+         "How do you write 'Hello World' in PHP?",
+			"All variables in PHP start with which symbol?",
+			"The PHP syntax is most similar to:",
+			"How do you get information from a form that is submitted using the 'get' method?",
+			"What is the correct way to create a function in PHP?",
+			"Which superglobal variable holds information about headers, paths, and script locations?",
+			"What is the correct way to add 1 to the $count variable?",
+			"Which one of these variables has an illegal name?",
+			"Which of the following is the correct way to echo a variable?",
+			"What happens if you escape a character in a string that does not need to be?",
+			"What 3 characters must you type to begin a heredoc?",
+			"The following example $a -= $b; is the same as?",
+			"If the variable $x = 10; , what will $x equal if it is incremented, that is, if I write $x++; what value will $x contain after it has been incremented?"
     ];
     var answer = [
-        "Preprocessed Hypertext Page","Hypertext Markup Language","PHP: Hypertext Preprocessor","Hypertext Transfer Protocol",
-        "// commented code to end of line", "/* commented code here */","# commented code to end of line","all of the above",
-        "undef","null","None","There is no such concept in PHP",
-        "const","constant","define","def",
-        "!=",">=","<=>","<>",
-        "< input name= MyArray[]/>","< input ='MyArray[]' />","< input name='MyArray[]' />","< input MyArray[] />",
-        "Each try block or 'throw' must have at least one corresponding catch block","Multiple catch blocks can be used to catch different classes of exceptions","Both a and b above","Exceptions cannot be thrown (or re-thrown) in a catch block within a try block"
+         "Preprocessed Hypertext Page","Hypertext Markup Language","PHP: Hypertext Preprocessor","Hypertext Transfer Protocol",
+         "// commented code to end of line", "/* commented code here */","# commented code to end of line","all of the above",
+         "undef","null","None","There is no such concept in PHP",
+         "const","constant","define","def",
+         "!=",">=","<=>","<>",
+         "< input name= MyArray[]/>","< input ='MyArray[]' />","< input name='MyArray[]' />","< input MyArray[] />",
+         "Each try block or 'throw' must have at least one corresponding catch block","Multiple catch blocks can be used to catch different classes of exceptions","Both a and b above","Exceptions cannot be thrown (or re-thrown) in a catch block within a try block",
+         "Document.Write('Hello World'); ","Hello World;","echo 'Hello World';","printf 'Hello World';",
+			"!","&","$","_",
+			"VBScript","Perl and C","JavaScript","Ruby",
+			"Request.QueryString;", "Request.Form;", "$_GET[];","_GET()",
+			"new_function myFunction()","create myFunction()"," function myFunction()","new function myFunction",
+			"$_SERVER","$_SESSION","$_GLOBALS","$_GET",
+			"++count","count++;","$count =+1","$count++;",
+			"$myVar","$my_Var","$my-Var","my_Var",
+			"echo '$aVariable';","echo $aVariable;","echo aVariable","None of Above",
+			"Nothing happens","A backslash will show up when outputting the string","A forward slash will show up when outputting the string","All of the above",
+			"$$$",">>>","<<<","^^^",
+			"$b = $a $b;","$a = $a $b;","$a = $b $a;","$b = $b $a;",
+			"9","10","11","12"
     ];
 
     var qs="Q";
@@ -77,7 +103,7 @@
     function takerandomnumber(){
         var arr = [];
         while(arr.length < 5){
-            var randomnumber=Math.ceil(Math.random()*7)
+            var randomnumber=Math.ceil(Math.random()*20)
             var found=false;
             for(var i=0;i<arr.length;i++){
                 if(arr[i]==randomnumber){found=true;break}
